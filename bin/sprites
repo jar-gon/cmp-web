@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+process.chdir(__dirname + '/../');
+
+var fs = require('fs');
+var path = require('path');
+
+var SRC = 'public/sprite/';
+var OUT = 'public/img/';
+var TEMPLATE = SRC + 'template.hbs';
+var CSS_PATH = '../img/';
+
+var SPRITES = [
+  ['sprites', false, false]
+];
+
+sprity.apply(null, SPRITES.shift());
+
+function sprity(name, jpg, prefix = true) {
+  if (!name) return;
+  require('sprity').create({
+    name: prefix ? 'sprites-' + name : name,
+    src: SRC + name + '/*',
+    out: OUT,
+    style: path.relative(OUT, SRC + name + '.styl'),
+    template: TEMPLATE,
+    cssPath: CSS_PATH,
+    prefix: name,
+    orientation: 'binary-tree',
+    margin: 0,
+    format: jpg ? 'jpg' : 'png'
+  }, function (err) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+    sprity.apply(null, SPRITES.shift());
+  });
+}

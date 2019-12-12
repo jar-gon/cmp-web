@@ -1,0 +1,146 @@
+$css-box-space = 0 5 10 15 20 24 25 30 50
+
+@import 'basic-css'
+@import 'stylus-nib'
+@import '../sprite/sprites'
+
+$width = 1080px
+$min-width = $width + 80px
+
+$primary-color = #f7931e
+$info-color = #525f7f
+$text-color = #445a64
+$white = #fff
+$black = #000
+$black-20 = rgba($black, .2)
+$blue = #2b86e8
+$background-color = #f8f8f8
+$border-color = #e6e6e6
+
+$font-size = 14px
+$font-size-sm = 12px
+$line-height = 20px
+
+$border-radius = 4px
+$border-radius-sm = 2px
+
+html, body, h2, h3, h4, p, ul, li, dl, dt, dd
+  margin 0
+  padding 0
+  list-style none
+
+*, *:before
+  box-sizing border-box
+  transition all .3s
+
+body
+  font: $font-size/1 "San Francisco", "Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", SimSun, "WenQuanYi Micro Hei", sans-serif
+  color $text-color
+  -webkit-tap-highlight-color rgba($black, 0)
+  -webkit-touch-callout none
+
+a
+  text-decoration none
+  outline none
+
+img
+  vertical-align top
+  border 0
+
+input, textarea
+  padding 10px
+  font-size $font-size
+  color $text-color
+  border none
+  background #fff
+
+textarea
+  resize none
+
+button
+  padding 0
+  border none
+  cursor pointer
+
+  &[disabled]
+    cursor not-allowed
+    background #ccc !important
+
+:focus
+  outline 0
+
+.line-list
+  font-size 0
+
+  > li
+    display inline-block
+    vertical-align top
+
+.flex
+  display flex
+  justify-content space-between
+
+.sprites-icon
+  display inline-block
+  border 2px solid $primary-color
+  border-radius 200px
+  background-color $white
+
+.wrapper
+  margin 0 auto
+  width $width
+
+.layout
+  &-head
+    padding 0 40px
+    min-width $min-width
+    height 80px
+    background $info-color
+
+    .logo
+      margin-top 18px
+      width 128px
+
+    .buttons
+      float right
+      padding-top 28px
+      line-height 25px
+
+      a
+        display inline-block
+        color $white
+
+        &:first-child
+          margin-right 24px
+          padding 0 22px
+          height 25px
+          border-radius $border-radius-sm
+          box-shadow 0px 2px 4px rgba($black, .35)
+          background $primary-color
+
+  &-wrapper
+    padding 0 40px
+    min-width $min-width
+
+  &-foot
+    padding 20px 40px
+    min-width $min-width
+    line-height $line-height
+    color $white
+    text-align center
+    font-size $font-size-sm
+    background #757575
+
+.back-top
+  position fixed
+  right 20px
+  bottom 60px
+  z-index 1
+  display none
+  width 35px
+  height 35px
+  half-background('../img/back.png')
+  cursor pointer
+
+  &:hover
+    half-background('../img/back-hover.png')

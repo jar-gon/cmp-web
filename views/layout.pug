@@ -1,0 +1,38 @@
+include mixins
+
+- var url = 'https://console.cmplite.cn'
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title 云权科技 | CMPlite
+    meta(name="keywords" content="CMP,多云管理,运管平台,aliyun,AWS,折扣,阿里云,CMPlite,CMPlite,云权cmp,云权科技cmp,云权CMPlite,云权科技CMPlite")
+    meta(name="description" content="CMPlite云管平台是上海云权科技有限公司旗下重要产品版块组成之一，用户和MSP可实现在统一界面管理多云厂商的资源和服务，快速切换账号和云厂商并跳转至其原生控制台进行操作，从而实现轻量级的多云纳管、统一登录、统一服务。")
+    meta(content="yes" name="apple-mobile-web-app-capable")
+    meta(content="black" name="apple-mobile-web-app-status-bar-style")
+    meta(content="telephone=no" name="format-detection")
+    meta(content="email=no" name="format-detection")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1")
+    link(href="/img/favicon.ico" rel="icon")
+    block style
+  body
+    .layout
+      .layout-head
+        .wrapper
+          a(href="/")
+            img.logo(src="/img/logo.png")
+          .buttons
+            a(href=url + "/register" target="_blank") 注册
+            a(href=url + "/login" target="_blank") 登录
+
+      block body
+
+      .layout-foot 上海云权科技有限公司
+        div Shanghai Cloudempower Co.,Ltd.
+        div 沪ICP备18044075号-1 沪公网安备 31011002002949号
+
+    #backTop.back-top
+
+    block script
+      +script('jquery', 'common')

@@ -1,0 +1,29 @@
+image: registry.yunq.cn/docker/build/node:6.10.1
+
+build:
+  stage: build
+  script:
+    - yarn
+    - yarn build
+  artifacts:
+    paths:
+      - dist
+  tags:
+    - build
+  only:
+    refs:
+      - master
+    variables:
+      - $CI_RUN =~ /^(true|yes|on)$/i
+
+deploy:
+  stage: deploy
+  script:
+    - rsync -r --delete dist/ $DEPLOY_SERVER:$DEPLOY_PATH
+  tags:
+    - deploy
+  only:
+    refs:
+      - master
+    variables:
+      - $CI_RUN =~ /^(true|yes|on)$/i

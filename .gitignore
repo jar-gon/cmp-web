@@ -1,0 +1,9 @@
+/node_modules/
+/config/*.ini
+!/config/example.ini
+/public/css/*.css
+/public/js/*.js
+/dist/
+/yunq.tgz
+npm-debug.log
+/.idea/
