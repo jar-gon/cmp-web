@@ -1,0 +1,7 @@
+mixin link(...refs)
+  for x in refs
+    link(href=("/css/" + x + ".css") rel="stylesheet")
+
+mixin script(...refs)
+  for x in refs
+    script(src="/js/" + x + ".js")

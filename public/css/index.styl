@@ -1,0 +1,222 @@
+@import 'common'
+
+.banner
+
+  .wrapper
+    position relative
+    padding-top 80px
+    height 380px
+    half-background('../img/index-bg.png', none, right, center)
+
+  &-title
+    font-size 36px
+    color #76919d
+
+  &-description
+    margin-top 30px
+    font-size 24px
+    color $primary-color
+
+  &-buttons
+    position absolute
+    left 0
+    bottom 92px
+
+    a
+      display inline-block
+      width 168px
+      height height = 45px
+      line-height height
+      text-align center
+      border 1px solid $white
+      border-radius $border-radius
+      box-shadow 0 1px 4px 0 $black-20
+      background $white
+
+      &:hover
+        border-color $link-hover-color
+
+      &.primary
+        color $white
+        border-color $primary-color
+        background $primary-color
+
+        &:hover
+          border-color $link-hover-color
+          background $link-hover-color
+
+      & + a
+        margin-left 24px
+
+.feature
+  padding 50px 40px
+  background $background-color
+
+  &-header
+    padding 25px 0 40px
+    font-size 24px
+    text-align center
+    color $info-color
+
+  li
+    position relative
+    width 225px
+    height 254px
+    line-height 24px
+    text-align center
+
+  &-title
+    padding 26px 0 10px
+
+  &-link
+    position absolute
+    left 50%
+    bottom 0
+    display inline-block
+    margin-top 48px
+    color $blue
+    transform translateX(-50%)
+
+  &-content
+    padding 25px 40px
+    overflow hidden
+
+    .wrapper
+
+      li
+        @extend .flex
+        align-items center
+        flex-direction row
+
+        &:nth-child(2n+1)
+          flex-direction row-reverse
+
+          .feature-content-icon
+            margin-left 128px
+            margin-right 0
+
+    &-icon
+      margin 25px 0
+      margin-right 128px
+
+    &-title
+      padding-bottom 20px
+      font-size 24px
+
+    &-description
+      width 440px
+      line-height 24px
+
+.about
+  padding 50px 40px
+  background $background-color
+  text-align center
+
+  &-title
+    padding-bottom 35px
+    font-size 24px
+    font-weight bold
+
+  &-description
+    padding 0 70px
+    line-height 24px
+
+    p
+      padding-bottom 28px
+
+.contact
+  padding 10px 40px 94px
+
+  &-head
+    padding 58px 0
+    font-size 24px
+    text-align center
+
+  ul
+    justify-content space-around
+
+  li
+    width 280px
+
+  &-icon
+    float left
+    margin-right 32px
+    @extend .sprites-icon
+
+  &-text
+    &1
+      padding 26px 22px
+      font-weight bold
+
+    &2
+      color $primary-color
+
+      a
+        color $primary-color
+
+.foot
+  &-trial
+    padding 50px 40px
+    height 200px
+    text-align center
+    background url('../img/trial-bg.png') $primary-color
+    background-size 100%
+    background-repeat repeat-y
+    background-attachment fixed
+
+    &-title
+      font-size 24px
+      color $white
+
+    &-btn
+      display inline-block
+      margin-top 32px
+      width 158px
+      height 45px
+      line-height 45px
+      color $white
+      border 1px solid $white
+      border-radius $border-radius
+
+      &:hover
+        color $primary-color
+        background $white
+
+  &-icon
+    padding 56px 0
+    height 352px
+
+    &-header
+      padding-bottom 40px
+      line-height 48px
+      font-size 24px
+      text-align center
+
+    .iso
+      position relative
+      width 625px
+
+      .foot-icon-header
+        padding-right 70px
+
+      &:before
+        position absolute
+        top 0
+        right 0
+        content ''
+        width 1px
+        height 240px
+        background #dbdbdb
+
+      ul
+        display flex
+        justify-content flex-start
+
+    li + li
+      margin-left 90px
+
+    .partners
+      ul
+        display flex
+        height 132px
+        align-items center

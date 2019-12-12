@@ -1,0 +1,101 @@
+[class^="sprites-"], [class*=" sprites-"]
+  background s('url("../img/sprites.png") 0 0 / %s', 2048px / 2)
+
+sprite-size($width, $height, $selector = null)
+  $name = "$sprite-size-" + $width + "_" + $height
+  $count = lookup($name) or 0
+  if $selector
+    if length($selector) <= 20
+      $count += 1
+      if $count == 2
+        $sprite-size-{$width}-{$height}
+          width ($width)px
+          height ($height)px
+    define($name, $count, true)
+  else
+    if $count >= 2 and length(selector()) <= 20
+      @extend $sprite-size-{$width}-{$height}
+    else
+      width ($width)px
+      height ($height)px
+
+sprite-size(240 / 2, 264 / 2, ".sprites-20000")
+sprite-size(240 / 2, 264 / 2, ".sprites-27001")
+sprite-size(240 / 2, 264 / 2, ".sprites-9001")
+sprite-size(369 / 2, 86 / 2, ".sprites-aliyun")
+sprite-size(216 / 2, 130 / 2, ".sprites-aws")
+sprite-size(1024 / 2, 604 / 2, ".sprites-computer-1")
+sprite-size(1024 / 2, 604 / 2, ".sprites-computer-2")
+sprite-size(1024 / 2, 604 / 2, ".sprites-computer-3")
+sprite-size(1024 / 2, 604 / 2, ".sprites-computer-4")
+sprite-size(1024 / 2, 604 / 2, ".sprites-computer-5")
+sprite-size(216 / 2, 216 / 2, ".sprites-email")
+sprite-size(216 / 2, 216 / 2, ".sprites-feature-1")
+sprite-size(216 / 2, 216 / 2, ".sprites-feature-2")
+sprite-size(216 / 2, 216 / 2, ".sprites-feature-3")
+sprite-size(216 / 2, 216 / 2, ".sprites-feature-4")
+sprite-size(216 / 2, 216 / 2, ".sprites-tel")
+
+.sprites-20000
+  sprite-size(240 / 2, 264 / 2)
+  background-position (1264px / -2) (1208px / -2)
+
+.sprites-27001
+  sprite-size(240 / 2, 264 / 2)
+  background-position (1504px / -2) (1208px / -2)
+
+.sprites-9001
+  sprite-size(240 / 2, 264 / 2)
+  background-position (1024px / -2) (1208px / -2)
+
+.sprites-aliyun
+  sprite-size(369 / 2, 86 / 2)
+  background-position (1024px / -2) (1688px / -2)
+
+.sprites-aws
+  sprite-size(216 / 2, 130 / 2)
+  background-position (216px / -2) (1812px / -2)
+
+.sprites-computer-1
+  sprite-size(1024 / 2, 604 / 2)
+  background-position (0px / -2) (604px / -2)
+
+.sprites-computer-2
+  sprite-size(1024 / 2, 604 / 2)
+  background-position (1024px / -2) (604px / -2)
+
+.sprites-computer-3
+  sprite-size(1024 / 2, 604 / 2)
+  background-position (0px / -2) (1208px / -2)
+
+.sprites-computer-4
+  sprite-size(1024 / 2, 604 / 2)
+  background-position (0px / -2) (0px / -2)
+
+.sprites-computer-5
+  sprite-size(1024 / 2, 604 / 2)
+  background-position (1024px / -2) (0px / -2)
+
+.sprites-email
+  sprite-size(216 / 2, 216 / 2)
+  background-position (1744px / -2) (1208px / -2)
+
+.sprites-feature-1
+  sprite-size(216 / 2, 216 / 2)
+  background-position (1024px / -2) (1472px / -2)
+
+.sprites-feature-2
+  sprite-size(216 / 2, 216 / 2)
+  background-position (1240px / -2) (1472px / -2)
+
+.sprites-feature-3
+  sprite-size(216 / 2, 216 / 2)
+  background-position (1456px / -2) (1472px / -2)
+
+.sprites-feature-4
+  sprite-size(216 / 2, 216 / 2)
+  background-position (1672px / -2) (1472px / -2)
+
+.sprites-tel
+  sprite-size(216 / 2, 216 / 2)
+  background-position (0px / -2) (1812px / -2)

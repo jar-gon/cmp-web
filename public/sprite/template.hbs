@@ -1,0 +1,34 @@
+{{#each layouts}}
+{{#each sprites}}
+[class^="{{../classname}}-"], [class*=" {{../classname}}-"]
+  background s('url("{{escimage url}}") 0 0 / %s', {{width}}px / 2)
+{{/each}}
+
+sprite-size($width, $height, $selector = null)
+  $name = "$sprite-size-" + $width + "_" + $height
+  $count = lookup($name) or 0
+  if $selector
+    if length($selector) <= 20
+      $count += 1
+      if $count == 2
+        $sprite-size-{$width}-{$height}
+          width ($width)px
+          height ($height)px
+    define($name, $count, true)
+  else
+    if $count >= 2 and length(selector()) <= 20
+      @extend $sprite-size-{$width}-{$height}
+    else
+      width ($width)px
+      height ($height)px
+
+{{#each layout.items}}
+sprite-size({{width}} / 2, {{height}} / 2, ".{{../classname}}-{{meta.name}}")
+{{/each}}
+{{#each layout.items}}
+
+.{{../classname}}-{{meta.name}}
+  sprite-size({{width}} / 2, {{height}} / 2)
+  background-position ({{x}}px / -2) ({{y}}px / -2)
+{{/each}}
+{{/each}}
