@@ -1,0 +1,69 @@
+@import 'common'
+
+.trial
+  padding 50px 46px
+
+  &-left
+    &-title
+      padding-bottom 28px
+      line-height 60px
+      font-size 36px
+      color $title
+
+  &-right
+    margin-top 60px
+    padding 24px 32px
+    width 475px
+    background #eee
+
+    .yq-form
+      &-item
+        padding-bottom 8px
+
+        &-label
+          color #888
+          line-height 28px
+
+        &-control
+          color #fff
+
+      input
+        width 100%
+        height 44px
+        line-height 24px
+
+      textarea
+        width 100%
+        height 70px
+        line-height $line-height
+
+      button
+        margin-top 12px
+        width 168px
+        height height = 45px
+        color $white
+        border-radius $border-radius
+        box-shadow 0 1px 4px 0 $black-20
+        background $primary-color
+
+        &:hover
+          background $link-hover-color
+
+      &-error
+        color #f00
+        padding-top 4px
+        font-size $font-size-sm
+
+.alert
+  position fixed
+  top 20px
+  right 20px
+  z-index 10
+  display none
+  width 395px
+  height 40px
+  line-height 40px
+  text-align center
+  border-radius $border-radius
+  box-shadow 0 1px 4px 0 $black-20
+  background $white

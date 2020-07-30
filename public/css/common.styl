@@ -1,22 +1,23 @@
-$css-box-space = 0 5 10 15 20 24 25 30 50
+$css-box-space = 0 5 10 15 20 24 25 30 34 50
+$css-font-size = 12 14 16 18 20 24 32 48
 
 @import 'basic-css'
 @import 'stylus-nib'
 @import '../sprite/sprites'
 
-$width = 1080px
+$width = 1250px
 $min-width = $width + 80px
 
 $primary-color = #f7931e
 $link-hover-color = #d6801a
-$info-color = #525f7f
-$text-color = #445a64
+$text-color = #7a7f83
+$title-color = #102039
 $white = #fff
 $black = #000
 $black-20 = rgba($black, .2)
 $blue = #2b86e8
-$background-color = #f8f8f8
-$border-color = #e6e6e6
+$background-color = #f8fafb
+$border-color = #dce1e3
 
 $font-size = 14px
 $font-size-sm = 12px
@@ -41,19 +42,22 @@ body
   -webkit-touch-callout none
 
 a
-  color $primary-color
   text-decoration none
   outline none
 
+a.btn
+  display inline-block
+  height height = 60px
+  line-height height
+  text-align center
+  color $primary-color
+  border-radius $border-radius
+  background $white
+
   &:hover
-    color $link-hover-color
-
-  &.primary
     color $white
-    background $primary-color
+    background rgba($white, .2)
 
-    &:hover
-      background $link-hover-color
 
 img
   vertical-align top
@@ -92,61 +96,159 @@ button
   display flex
   justify-content space-between
 
-.sprites-icon
+.sprites-icon-sm
   display inline-block
-  border 2px solid $primary-color
-  border-radius 200px
-  background-color $white
+  margin-right 4px
+  vertical-align -1px
 
 .wrapper
   margin 0 auto
   width $width
 
+.head-bg
+  height 80px
+  background $primary-color
+
 .layout
+  position relative
+
   &-head
+    position absolute
+    z-index 5
+    width 100%
     padding 0 40px
     min-width $min-width
     height 80px
-    background $info-color
 
     .logo
       margin-top 18px
-      width 128px
+      width 160px
+      @extend .select-none
 
-    .buttons
+    .nav
       float right
-      padding-top 28px
-      line-height 25px
+      padding-top 20px
+      line-height 40px
+      font-size $font-size
+      color $white
+      @extend .line-list
 
-      a
-        display inline-block
-        color $white
+      li
+        margin-left 30px
 
-        &:hover
-          color $link-hover-color
-
-        &.primary
-          margin-right 24px
-          padding 0 22px
-          height 25px
-          border-radius $border-radius-sm
-          box-shadow 0px 2px 4px rgba($black, .35)
+        a
+          display inline-block
+          color $white
 
           &:hover
-            color $white
+            color rgba($white, .7)
+
+          &.primary
+            width 120px
+            height 40px
+            text-align center
+            border-radius $border-radius
+            background rgba($white, .2)
+
+            &:hover
+              color $primary-color
+              background $white
 
   &-wrapper
     padding 0 40px
     min-width $min-width
 
   &-foot
-    padding 20px 40px
-    min-width $min-width
-    line-height $line-height
+    color #7a7f83
+    background #e5ebee
+
+    .wrapper
+      @extend .flex
+      align-items center
+      height 60px
+
+.data
+  height height = 240px
+  background url('../img/trial-bg.png') $primary-color
+  background-size 100%
+  background-repeat repeat-y
+  background-attachment fixed
+
+  &-wrapper
+    @extend .flex
+    align-items center
+    height height
+
+  .justify-content_center
+    @extend .justify-content_center
+
+  &-content
+    font-size 24px
     color $white
+
+  a
+    width 280px
+
+.footer
+  position relative
+  padding-top 60px
+  height 260px
+
+  &::before
+    position absolute
+    left 0
+    top 90px
+    z-index -1
+    display block
+    content ''
+    width 100%
+    height 1px
+    background $border-color
+
+  &-title
+    display inline-block
+    width 212px
+    height height = 60px
+    line-height height
     text-align center
-    font-size $font-size-sm
-    background #757575
+    border 1px solid $border-color
+    border-radius $border-radius
+    background $white
+
+  .certificate
+    text-align center
+
+    ul
+      @extend .flex
+      margin-top 32px
+      width 280px
+
+      li
+        width 45px
+        height 50px
+
+  .partner
+    text-align center
+
+    ul
+      @extend .flex
+      margin-top 36px
+      width 480px
+
+      li
+        width 120px
+        height 40px
+
+  .contact
+    width 254px
+
+    &-content
+      padding 28px 0 0 24px
+      line-height 30px
+
+      .sprites-email
+        margin-right 6px
+        vertical-align -2px
 
 .back-top
   position fixed

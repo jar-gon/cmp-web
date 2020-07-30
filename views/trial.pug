@@ -1,0 +1,41 @@
+extend layout
+
+block title
+  | 申请试用
+
+block style
+  +link('trial')
+
+block body
+  .layout-wrapper.head-bg
+  .layout-wrapper.trial
+    .wrapper.flex
+      .trial-left
+        .trial-left-title 申请 CMPlite 试用账号
+        .trial-left-img.sprites-trial
+      .trial-right
+        .yq-form
+          .yq-form-item
+            .yq-form-item-label * 姓名
+            .yq-form-item-control
+              input#username(name="client_name" placeholder="请输入您的姓名" maxlength="24")
+          .yq-form-item
+            .yq-form-item-label * 公司
+            .yq-form-item-control
+              input#companyname(name="company_name" placeholder="请输入公司名称" maxlength="24")
+          .yq-form-item
+            .yq-form-item-label * 联系电话
+            .yq-form-item-control
+              input#mobile(name="mobile" placeholder="请输入联系电话" maxlength="11")
+          .yq-form-item
+            .yq-form-item-label * 需求描述
+            .yq-form-item-control
+              textarea#demand(name="demand" placeholder="请描述您的需求，如感兴趣的产品")
+          .yq-form-error
+          .yq-form-item
+            button#btn 提交
+
+  .alert#alert 感谢您的关注，我们的工作人员会尽快与您取得联系。
+
+append script
+  +script('tools', 'trial')

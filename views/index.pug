@@ -1,118 +1,67 @@
 extend layout
 
-//- block title
-  | 让计算更简单
+block title
+  | 首页
 
 block style
   +link('index')
 
 block body
   .layout-wrapper.banner
+    .banner-bg.banner-bg1
+    .banner-bg.banner-bg2
+    .banner-bg.banner-bg3
     .wrapper
-      .banner-title 少即是多
-      .banner-description 多云管理进入免费时代
+      .banner-pic.sprites-banner
+      .banner-title 清晰掌握你团队的云支出
+      .banner-description 将 IT，财务和业务整合，应对不确定的云支出带来的财务挑战，为你节省
+        span 30
+        | %的公有云成本
       .banner-buttons
-        a.primary(href=url + "/register" target="_blank") 立即注册
-        a(href=url + "/login" target="_blank") 登录
+        a.btn(href="/trial.html") 立即试用
 
-  .layout-wrapper.feature
+  .layout-wrapper.index-list.feature
     .wrapper
-      .feature-header CMPlite 功能概览
-      ul.flex
-        li
-          .sprites-icon.sprites-feature-1
-          .feature-title 资源界面统一概览
-          .feature-description 用户通过统一的门户来概览并管理多个账号下云主机资源，无需在不同的界面或控制台中反复的切换。
-        li
-          .sprites-icon.sprites-feature-2
-          .feature-title 快速跳转至原生控制台
-          .feature-description 通过CMPlite一键跳转至云厂商控制台，管理和操作云服务商提供的所有产品和服务，方便快捷。
-        li
-          .sprites-icon.sprites-feature-3
-          .feature-title 可视化财务中心
-          .feature-description 通过财务中心优化用户和MSP之间的财务流程，支持对已购资源在发票管理和开票层面的统一操作。
-        li
-          .sprites-icon.sprites-feature-4
-          .feature-title 高效的工单管理
-          .feature-description 工单是用户和MSP沟通的桥梁之一，通过工单系统用户可及时提出疑问，MSP快速做出响应，管理问题进度并提高用户体验。
+      .index-list-title.feature-title 应对组织面临的云挑战
+      .feature-description CMPlite 持续分析和报告您环境中的每种云资源，使您能够识别和消除浪费在云上的每一分钱<br>了解如何通过 CMPlite 制订个性化的成本节省计划，节省30％或更多的公有云成本
+      .index-list-content.feature-content
+        .feature-img.sprites-feature
+        ul
+          li
+            .feature-icon.sprites-feature1
+            .index-list-content-title 资源界面统一概览
+            .index-list-content-description 用户通过统一的门户来概览并管理多个账号下云主机资源，无需在不同的界面或控制台中反复的切换。
+          li
+            .feature-icon.sprites-feature2
+            .index-list-content-title 快速跳转至原生控制台
+            .index-list-content-description 通过CMPlite一键跳转至云厂商控制台，管理和操作云服务商提供的所有产品和服务，方便快捷。
+          li
+            .feature-icon.sprites-feature3
+            .index-list-content-title 可视化财务中心
+            .index-list-content-description 通过财务中心优化用户和MSP之间的财务流程，支持对已购资源在发票管理和开票层面的统一操作。
+          li
+            .feature-icon.sprites-feature4
+            .index-list-content-title 高效的工单管理
+            .index-list-content-description 工单是用户和MSP沟通的桥梁之一，通过工单系统用户可及时提出疑问，MSP快速做出响应，管理问题进度并提高用户体验。
 
-  .layout-wrapper.feature-content
+  .layout-wrapper.index-list.method
     .wrapper
-      .feature-header CMPlite 功能模块展示
+      .index-list-title.method-title 云成本管理的新方法
+      .index-list-content.method-content
+        ul
+          li
+            .method-icon.sprites-method1
+            .index-list-content-title 云的新运营模式
+            .index-list-content-description FinOps 将技术，业务和财务结合在一起，以掌握云时代的竞争优势
+          li
+            .method-icon.sprites-method2
+            .index-list-content-title FinOps 服务可加快您的云之旅
+            .index-list-content-description FinOps 最佳实践和专家知识，使您的增长需求与财务预测保持一致
+        .sprites-method.margin-top_10
+
+  .layout-wrapper.customer
+    .wrapper
+      .customer-title 领先的云用户信赖我们
       ul
-        li
-          .feature-content-item
-            .feature-content-icon.sprites-computer-1
-          .feature-content-item
-            .feature-content-title 云主机的统一实时监控
-            .feature-content-description 化繁为简，清晰、简洁的云主机概览界面能够满足多数IT运维从业人员的需求，通过的页面实时了解多云厂商的云主机、数据库及区域分布信息，同时可对不同云厂商资源进行快速切换。
-        li
-          .feature-content-item
-            .feature-content-icon.sprites-computer-2
-          .feature-content-item
-            .feature-content-title 资源的统一管理及批量操作
-            .feature-content-description 通过单个页面对资源进行汇总，如总实例数、运行中、ID名称、IP地址和有效期等；一个好用、易用和够用的操作界面同时可对实例进行连接、开机、重启和重置密码等操作。
-        li
-          .feature-content-item
-            .feature-content-icon.sprites-computer-3
-          .feature-content-item
-            .feature-content-title 近期消费&安全汇总的可视化
-            .feature-content-description 通过近期消费情况对财务进行统一监控与分析， 从而了解费用支出结构，结合自身核心业务优化IT支出与管理；系统安全永远是运维工作的重中之重，通过安全汇总版块可对系统漏洞、安全警告和应用漏洞等进行统一监控并及时发现问题。
-        li
-          .feature-content-item
-            .feature-content-icon.sprites-computer-4
-          .feature-content-item
-            .feature-content-title 支持用户和MSP添加多种类型账号
-            .feature-content-description 用户可自由选择账号类型，如添加自有账号和申请MSP折扣账号等满足不同需求；MSP可添加代理账号、代销账号和自有折扣账号，从更多维度为客户提供服务。
-        li
-          .feature-content-item
-            .feature-content-icon.sprites-computer-5
-          .feature-content-item
-            .feature-content-title 订单&发票管理
-            .feature-content-description 可对过往订单的日期、交易金额及状态进行可视化管理并进行批量操作，提高IT运维效率；便捷的发票管理同样大大提高用户和MSP在财务端的工作效率从而优化IT运维工作流程，支持添加、修改和删除发票并统一管理和批量操作。
-
-  .layout-wrapper.about
-    .wrapper
-      .about-title 关于云权科技
-      .about-description
-        p 上海云权科技有限公司是一家技术领先的云计算综合解决方案提供商，本着「让计算更简单」的使命，致力于构建企业数字生态平台的研发，为企业用户提供简单易用、贴近业务、场景创新、高效节约的计算服务和数字化转型服务。
-        p 公司自主研发的云商务平台（Cloud Commerce Platform）、云经纪平台（Cloud Broker Platform）和多云管理平台（CMPlite），为企业提供数字商品在线交易、软件SaaS化、多级计费和云端交付能力，帮助企业私有化客户池、高效获客、加速市场化、提高经营效率，更便捷的支持企业上云，全面助力企业构建自己的数字生态。
-        p CMPlite云管平台是上海云权科技有限公司旗下重要产品版块组成之一，用户和MSP可实现在统一界面管理多云厂商的资源和服务，快速切换账号和云厂商并跳转至其原生控制台进行操作，从而实现轻量级的多云纳管、统一登录、统一服务。
-
-  .layout-wrapper.contact
-    .wrapper
-      .contact-head 联系我们
-      ul.flex
-        li
-          .contact-icon.sprites-email
-          .contact-text1 发送邮件
-          .contact-text2
-            a(href="mailto:contactus@yunq.cn?body=您好，%0a感谢您关注云权科技，为了更好的为您提供解决方案支持，请提供您的公司名，姓名，电话，并描述您的需求。%0a我们的工作人员会尽快与您取得联系。") contactus@yunq.cn
-        li
-          .contact-icon.sprites-tel
-          .contact-text1 官方热线
-          .contact-text2 400-021-9799
-
-  .layout-wrapper.foot-trial
-    .wrapper
-      .foot-trial-title CMPlite 少即是多
-      a.foot-trial-btn(href=url + "/register" target="_blank") 立即注册
-
-  .layout-wrapper.foot-icon
-    .wrapper.flex
-      .iso
-        .foot-icon-header 专业可靠，值得信赖
-        ul
-          li
-            .sprites-27001
-          li
-            .sprites-20000
-          li
-            .sprites-9001
-      .partners
-        .foot-icon-header 合作伙伴
-        ul
-          li
-            .sprites-aliyun
-          li
-            .sprites-aws
+        each value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          li(class=`sprites-customer${ value }`)

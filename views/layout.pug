@@ -1,12 +1,15 @@
 include mixins
 
 - var url = 'https://console.cmplite.cn'
+- var basename = filename.substr(basedir.length).split(/[\\\.]/).reverse()[1]
 
 doctype html
 html
   head
     meta(charset="utf-8")
-    title CMPlite｜轻量级多云管理平台
+    title
+      block title
+      | &nbsp;- CMPlite｜轻量级多云管理平台
     meta(name="keywords" content="CMP,多云管理,运管平台,aliyun,AWS,折扣,阿里云,CMPlite,CMPlite,云权cmp,云权科技cmp,云权CMPlite,云权科技CMPlite")
     meta(name="description" content="CMPlite云管平台是上海云权科技有限公司旗下重要产品版块组成之一，用户和MSP可实现在统一界面管理多云厂商的资源和服务，快速切换账号和云厂商并跳转至其原生控制台进行操作，从而实现轻量级的多云纳管、统一登录、统一服务。")
     meta(content="yes" name="apple-mobile-web-app-capable")
@@ -22,15 +25,59 @@ html
         .wrapper
           a(href="/")
             img.logo(src="/img/logo.png")
-          .buttons
-            a.primary(href=url + "/register" target="_blank") 注册
-            a(href=url + "/login" target="_blank") 登录
+          ul.nav
+            li
+              span.sprites-icon-sm.sprites-tel-white
+              | 400-021-9799
+            li: a(href="/") 首页
+            li: a(href=url + "/login" target="_blank") 登录
+            if basename === 'index'
+              li: a.primary(href="/trial.html") 立即试用
 
       block body
 
-      .layout-foot 上海云权科技有限公司
-        div Shanghai Cloudempower Co.,Ltd.
-        div 沪ICP备18044075号-1 沪公网安备 31011002002949号
+      .layout-wrapper.data
+        .wrapper.data-wrapper(class=(basename === 'index' ? '' : 'justify-content_center'))
+          .data-content 服务客户
+            span.font-48 500
+            span.padding-right_34 +
+            | 管理云支出
+            span.font-48 10000
+            span.font-32 万
+            span.padding-right_34 +
+            | 节省云成本
+            span.font-48 3000
+            span.font-32 万
+            | +
+          if basename === 'index'
+            a.btn(href="/trial.html") 释放您的云价值，立即试用
+
+      .layout-wrapper.footer
+        .wrapper.flex
+          .certificate
+            .footer-title 专业可靠，值得信赖
+            ul
+              each value in [1, 2, 3, 4]
+                li(class=`sprites-certificate${ value }`)
+          .partner
+            .footer-title 合作伙伴
+            ul
+              each value in [1, 2, 3, 4]
+                li(class=`sprites-partner${ value }`)
+          .contact
+            .footer-title 联系我们
+            .contact-content
+              div
+                span.sprites-icon-sm.sprites-email
+                | marketing@yunq.cn
+              div
+                span.sprites-icon-sm.sprites-tel
+                | 400-021-9799
+
+      .layout-foot.layout-wrapper
+        .wrapper
+          div 沪ICP备18044075号-1 沪公网安备 31011002002949号
+          div 上海云权科技有限公司
 
     #backTop.back-top
 
