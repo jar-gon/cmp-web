@@ -1,0 +1,58 @@
+@import 'common'
+
+.version
+  &-header
+    padding 40px
+    font-size 32px
+    color $title-color
+    text-align center
+
+  &-content
+    @extend .flex
+    align-items flex-start
+    margin-bottom 48px
+    line-height 40px
+    font-size 18px
+    color $title-color
+    text-align center
+    border-radius 8px
+
+    &-item
+      padding-bottom 25px
+      width 25%
+      box-shadow 0px 0px 8px 0px rgba(#d1d1d1, .5)
+      background $white
+      overflow hidden
+
+      dt
+        padding-top 10px
+        min-height 92px
+        color $primary-color
+        overflow hidden
+
+        a
+          margin 4px auto 10px
+          display block
+          width 130px
+          height height = 28px
+          line-height height
+          font-size $font-size
+          text-align center
+          color $white
+          border-radius $border-radius
+          background $primary-color
+
+      dd
+        min-height 40px
+
+        &:nth-child(2n)
+          background rgba($primary-color, .1)
+
+        .feature-img
+          display inline-block
+          margin-bottom -4px
+
+      & + .version-content-item:hover
+        padding 10px 0 35px
+        transform translateY(-10px)
+        background rgba($primary-color, .1)

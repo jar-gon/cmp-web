@@ -15,4 +15,12 @@ module.exports = [
     ]
   }
 
+  {
+    key: 'version'
+    label: '版本对比'
+    next: [
+      { name: 'version', label: '版本对比' }
+    ]
+  }
+
 ]
