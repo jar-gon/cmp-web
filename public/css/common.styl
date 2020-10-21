@@ -18,6 +18,7 @@ $black-20 = rgba($black, .2)
 $blue = #2b86e8
 $background-color = #f8fafb
 $border-color = #dce1e3
+$box-shadow = (0px 0px 8px 0px rgba(#d1d1d1, .5))
 
 $font-size = 14px
 $font-size-sm = 12px
@@ -36,7 +37,7 @@ html, body, h2, h3, h4, p, ul, li, dl, dt, dd
   transition all .3s
 
 body
-  font: $font-size/1 "San Francisco", "Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", SimSun, "WenQuanYi Micro Hei", sans-serif
+  font $font-size/1 "San Francisco", "Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", SimSun, "WenQuanYi Micro Hei", sans-serif
   color $text-color
   -webkit-tap-highlight-color rgba($black, 0)
   -webkit-touch-callout none
