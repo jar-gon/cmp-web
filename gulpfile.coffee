@@ -29,7 +29,7 @@ gulp.task 'html', ['clean'], pump ->
 gulp.task 'css', ['clean'], pump ->
   stylus = require 'gulp-stylus'
   [
-    gulp.src ['index', 'common', 'feature', 'trial'].map (x) -> "public/css/#{x}.styl"
+    gulp.src ['index', 'common', 'concact', 'version'].map (x) -> "public/css/#{x}.styl"
     stylus
       'include css': true
       compress: true

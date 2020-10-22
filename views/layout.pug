@@ -30,14 +30,15 @@ html
               span.sprites-icon-sm.sprites-tel-white
               | 400-021-9799
             li: a(href="/") 首页
+            li: a(href="/version.html") 版本对比
+            li: a(href="/concact.html") 联系我们
             li: a(href=url + "/login" target="_blank") 登录
-            if basename === 'index'
-              li: a.primary(href="/trial.html") 立即试用
+            li: a.primary(href=url + "/register" target="_blank") 免费试用
 
       block body
 
       .layout-wrapper.data
-        .wrapper.data-wrapper(class=(basename === 'index' ? '' : 'justify-content_center'))
+        .wrapper.data-wrapper
           .data-content 服务客户
             span.font-48 500
             span.padding-right_34 +
@@ -49,8 +50,7 @@ html
             span.font-48 3000
             span.font-32 万
             | +
-          if basename === 'index'
-            a.btn(href="/trial.html") 释放您的云价值，立即试用
+          a.btn(href=url + "/register" target="_blank") 释放您的云价值，免费试用
 
       .layout-wrapper.footer
         .wrapper.flex

@@ -1,4 +1,4 @@
-# 申请试用
+# 联系我们
 $btn = $ '#btn'
 $alert = $ '#alert'
 

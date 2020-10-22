@@ -8,10 +8,10 @@ module.exports = [
   }
 
   {
-    key: 'trial'
-    label: '申请试用'
+    key: 'concact'
+    label: '联系我们'
     next: [
-      { name: 'trial', label: '申请试用' }
+      { name: 'concact', label: '联系我们' }
     ]
   }
 
